@@ -22,7 +22,7 @@ yes = NoYes.YES
 if yes:
     print ('The _zero_value is working')
 
-if yes == NoYes.YES:
+if yes == NoYes.YES or yes == NoYes.from_value('Yes'):
     print ('This is another way to compare the values')
 
 print (repr(yes))       # <EnumValue (NoYes.YES)>
