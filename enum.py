@@ -62,30 +62,3 @@ def enum_to_dict(enum):
             ret[attr.name] = attr.value
 
     return ret
-
-
-def test():
-    class NoYes(Enum):
-        NO = 'No'
-        YES = 'Yes'
-
-        _zero_value = 'No'
-
-    class YesNo(Enum):
-        YES = 'Yes'
-        NO = 'No'
-
-    yes = NoYes.YES
-    no = NoYes.NO
-
-    assert no == NoYes.NO
-    assert no != NoYes.YES
-    assert no != yes
-    assert no == NoYes.from_value('No')
-
-    assert NoYes.NO != YesNo.NO
-
-    assert True if not NoYes.NO else False
-    assert True if NoYes.YES else False
-
-    print 'Test concluded'
